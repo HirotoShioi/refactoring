@@ -1,4 +1,4 @@
-export function createStatementdata(invoice, plays) {
+export default function createStatementdata(invoice, plays) {
   const statementData = {};
   statementData.customer = invoice.customer;
   statementData.performances = invoice.performances.map(enrichPerformance);
