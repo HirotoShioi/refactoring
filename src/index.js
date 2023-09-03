@@ -1,4 +1,4 @@
-import { statement, invoice, plays } from './statement.js';
+import { statement, invoice, plays } from './statement';
 
 async function main() {
   const result = statement(invoice[0], plays);
