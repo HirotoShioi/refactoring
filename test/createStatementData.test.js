@@ -1,5 +1,5 @@
-import createStatementData from '../src/createStatementData';
-import { invoice, plays } from '../src/data';
+import createStatementData from '../src/statement/createStatementData';
+import { invoice, plays } from '../src/statement/data';
 import { describe, expect, test } from '@jest/globals';
 
 describe('createStatementData', () => {

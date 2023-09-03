@@ -1,6 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { statement, htmlStatement } from '../src/statement';
-import { invoice, plays } from '../src/data';
+import { statement, htmlStatement, invoice, plays } from '../src/statement';
 
 describe('statement', () => {
   test('should return statement for BigCo', () => {
