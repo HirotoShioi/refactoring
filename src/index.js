@@ -1,8 +1,5 @@
-import { statement, invoice, plays } from './statement.js';
-
 async function main() {
-  const result = statement(invoice[0], plays);
-  console.log(result);
+  console.log('Hello World');
 }
 
 main().catch((err) => {
