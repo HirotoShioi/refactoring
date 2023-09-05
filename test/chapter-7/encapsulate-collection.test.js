@@ -12,7 +12,7 @@ describe('person', () => {
       new Course('Refactoring', false),
       new Course('Refactoring', false),
     ];
-    person.courses = courses;
+    courses.forEach((course) => person.addCourse(course));
     expect(person.courses).toStrictEqual(courses);
   });
   it('should return advanced courses', () => {
@@ -22,9 +22,23 @@ describe('person', () => {
       new Course('Refactoring', false),
       new Course('Advanced Refactoring', true),
     ];
-    person.courses = courses;
+    courses.forEach((course) => person.addCourse(course));
     const result = person.courses.filter((course) => course.isAdvanced);
     expect(result).toStrictEqual([new Course('Advanced Refactoring', true)]);
     expect(result.length).toBe(1);
+  });
+  // coursesを取り出して、変更しても、personのcoursesは変更されない
+  it('should return courses', () => {
+    const person = new Person('Martin Fowler');
+    const courses = [
+      new Course('Refactoring', false),
+      new Course('Refactoring', false),
+    ];
+    courses.forEach((course) => person.addCourse(course));
+    const personCourses = person.courses;
+    personCourses.push(new Course('Advanced Refactoring', true));
+    expect(person.courses).toStrictEqual(courses);
+    expect(person.courses.length).toBe(2);
+    expect(personCourses).not.toStrictEqual(person.courses);
   });
 });
