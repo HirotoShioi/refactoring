@@ -41,4 +41,25 @@ describe('person', () => {
     expect(person.courses.length).toBe(2);
     expect(personCourses).not.toStrictEqual(person.courses);
   });
+  it('should remove course', () => {
+    const person = new Person('Martin Fowler');
+    const courses = [
+      new Course('Refactoring', false),
+      new Course('Refactoring', false),
+    ];
+    courses.forEach((course) => person.addCourse(course));
+    person.removeCourse(courses[0]);
+    expect(person.courses).toStrictEqual([new Course('Refactoring', false)]);
+  });
+  it('should throw error', () => {
+    const person = new Person('Martin Fowler');
+    const courses = [
+      new Course('Refactoring', false),
+      new Course('Refactoring', false),
+    ];
+    courses.forEach((course) => person.addCourse(course));
+    expect(() =>
+      person.removeCourse(new Course('Advanced Refactoring', true)),
+    ).toThrow(RangeError);
+  });
 });
