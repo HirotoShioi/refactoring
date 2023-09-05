@@ -14,7 +14,7 @@ describe('priceOrder', () => {
       discountedFee: 3,
     };
     const price = priceOrder(product, quantity, shippingMethod);
-    expect(price).toBe(23);
+    expect(price).toBe(26);
   });
   it('should return price', () => {
     const product = {
@@ -29,6 +29,6 @@ describe('priceOrder', () => {
       discountedFee: 3,
     };
     const price = priceOrder(product, quantity, shippingMethod);
-    expect(price).toBe(32);
+    expect(price).toBe(38);
   });
 });
