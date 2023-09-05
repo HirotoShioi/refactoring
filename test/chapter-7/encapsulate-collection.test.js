@@ -1,4 +1,4 @@
-import { describe, test, expect } from '@jest/globals';
+import { describe, it, expect } from '@jest/globals';
 import { Person, Course } from '../../src/chapter-7/encapsulate-collection';
 
 describe('person', () => {
