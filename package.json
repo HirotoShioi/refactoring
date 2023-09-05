@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "start": "node src/index.js",
-    "watch": "nodemon --exec 'yarn test'"
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.22.11",
