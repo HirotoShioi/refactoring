@@ -7,7 +7,7 @@
   "scripts": {
     "test": "jest",
     "start": "node src/index.js",
-    "watch": "nodemon --exec 'yarn test'"
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.22.11",
@@ -16,7 +16,6 @@
     "husky": "^8.0.3",
     "jest": "^29.6.4",
     "lint-staged": "^14.0.1",
-    "nodemon": "^3.0.1",
     "prettier": "^3.0.3"
   },
   "dependencies": {
