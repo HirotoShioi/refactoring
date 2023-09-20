@@ -1,6 +1,7 @@
 import {
   plumages,
   speeds,
+  rating,
 } from '../../src/chapter-10/replace-conditional-with-polymorphism.js';
 import { describe, expect, it } from '@jest/globals';
 describe('plumages', () => {
@@ -36,7 +37,6 @@ describe('speeds', function () {
       },
     ];
     const result = speeds(birds);
-    console.log(result);
     expect(result.get('bird1')).toBe(35);
     expect(result.get('bird2')).toBe(40);
     expect(result.get('bird3')).toBe(10);
@@ -104,5 +104,34 @@ describe('speeds', function () {
     ];
     const result = speeds(birds);
     expect(result.get('bird1')).toBe(36);
+  });
+});
+
+describe('rating', () => {
+  it('should return correct B rating', () => {
+    const voyage = {
+      zone: 'west-indies',
+      length: 10,
+    };
+    const history = [
+      {
+        zone: 'east-indies',
+        profit: 5,
+      },
+      {
+        zone: 'west-indies',
+        profit: 15,
+      },
+      {
+        zone: 'china',
+        profit: -2,
+      },
+      {
+        zone: 'west-africa',
+        profit: 7,
+      },
+    ];
+    const result = rating(voyage, history);
+    expect(result).toBe('B');
   });
 });
