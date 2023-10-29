@@ -15,7 +15,6 @@ class Score {
     this._highMedicalRiskFlag = false;
 
     this.scoreSmoking();
-
     this._certificationGrade = 'regular';
     if (
       this._scoringGuide.stateWithLowCertification(this._candidate.originState)
