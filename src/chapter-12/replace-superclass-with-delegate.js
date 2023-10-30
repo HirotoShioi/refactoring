@@ -16,10 +16,21 @@ class CatalogItem {
   }
 }
 
-class Scroll extends CatalogItem {
+class Scroll {
   constructor(id, title, tags, dateLastCleaned) {
-    super(id, title, tags);
+    this._id = id;
+    this._catalogItem = new CatalogItem(null, title, tags);
     this._lastCleaned = dateLastCleaned;
+  }
+
+  get id() {
+    return this.id;
+  }
+  get title() {
+    return this._catalogItem.title;
+  }
+  hasTag(a) {
+    return this._catalogItem.hasTag(a);
   }
 
   needsCleaning(targetDate) {
